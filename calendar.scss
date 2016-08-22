@@ -1,0 +1,109 @@
+  .round{
+    -webkit-border-radius:100%;
+    -moz-border-radius:100%;
+    border-radius:100%;
+  }
+
+  .calendar{
+    font-family: 'Microsoft Yahei';
+    font-size: 14px;
+    position: relative;
+    .title{
+      display: block;
+      text-align: center;
+      height: 40px;
+      border-bottom: 1px solid #e4e4e4;
+      line-height: 40px;
+      position: relative;
+      min-width: 300px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      .text{
+        color: #666;
+        font-size: 20px;
+        display: inline-block;
+        letter-spacing:0.1em;
+        word-spacing: 0.5em;
+      }
+      .page-item{
+        width: 18px;
+        height: 40px;
+        display: inline-block;
+        position: absolute;
+        cursor: pointer;
+        //&:hover{
+        //  background-color: #e4e4e4;
+        //}
+      }
+      .prev{
+        @extend .page-item;
+        background: url("imgs/calendar_prev.png") no-repeat center center;
+        left: 25px;
+        top: 50%;
+        margin-top: -20px;
+      }
+      .next{
+        @extend .page-item;
+        background: url("imgs/calendar_next.png") no-repeat center center;
+        right: 25px;
+        top: 50%;
+        margin-top: -20px;
+      }
+    }
+    .grid-box{
+      border-bottom: 1px solid #e4e4e4;
+      text-align: center;
+      min-width: 320px;
+      overflow: auto;
+      .weeks{
+        font-weight: bold;
+        .day-row .day{
+          color: #5E206B;
+          -webkit-border-radius: 0px;
+          -moz-border-radius: 0px;
+          border-radius: 0px;;
+        }
+      }
+      .days{
+
+      }
+
+      .day-row{
+        margin-top: 5px;
+        .day{
+          @extend .round;
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          color: #797979;
+          //background: #e4e4e4;
+          text-align: center;
+          line-height: 30px;
+          font-size: 16px;
+          cursor: pointer;
+          border:1px solid transparent;
+          margin-left: 2px;
+          margin-right: 2px;
+          &:hover{
+            background-color: #e4e4e4;
+          }
+          &.disable{
+            color: #CFCFCF;
+          }
+          &.today{
+            color: #ffffff;
+            background-color: #FDBA00;
+          }
+          &.active{
+            border:1px solid #6A1686;
+          }
+          &.inactive{
+            border: 1px dashed #B9B9B9;
+          }
+
+        }
+
+      }
+    }
+    
+  }
